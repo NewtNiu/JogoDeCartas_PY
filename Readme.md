@@ -1,36 +1,124 @@
-Atividade individual ou em duplas cujo objetivo é a abstração de um jogo de cartas em um sistema
-computacional usando a linguagem Python.
+<div align="center">
 
-Regras e componentes do jogo de cartas a ser implementado:
-    1) O jogo possui cartas numeradas de 1 a 9 de 4 cores (azul, vermelha, amarela e verde), totalizando 40
-    cartas.
-    2) O jogo tem dois jogadores.
-    3) A sequência de jogo acontece da seguinte forma:
-    a. Forma-se um baralho (pilha) com as 40 cartas organizadas de forma aleatória (embaralhadas);
-    b. Distribui-se 5 cartas fechadas (apenas o jogador pode ver sua mão) para cada um dos
-    jogadores a partir do baralho;
-    c. Abre-se 1 carta aberta (visível a todos) na mesa, ao lado do baralho;
-    d. No turno de cada jogador, ele deve escolher uma carta da mão para jogar que seja da mesma
-    cor ou de mesmo número da carta aberta na mesa, formando uma pilha;
-    e. Caso o jogador não tenha nenhuma carta de mesma cor ou de mesmo número na mão, ele
-    deve pescar uma carta do baralho para sua mão e passar a vez;
-    f. O jogo termina quando um dos jogadores ficar sem cartas na mão ou quando um jogador tiver
-    que pescar uma carta e o baralho estiver vazio.
-    4) Ganha o jogo aquele jogador que bater primeiro (ficar sem cartas na mão) ou o jogador com o menor
-    número de cartas na mão (caso a partida termina por conta do baralho vazio).
-    g. Caso a partida termine e ambos os jogadores ficarem com o mesmo número de cartas na mão,
-    a partida é considerada um empate.
-    O trabalho deve possuir as seguintes características:
-    1) O jogo deve ser desenvolvido na linguagem Python, mas não é necessário desenvolver interface
-    gráfica. A interação com o usuário pode ser via terminal/console.
-    2) O nome de cada jogador, deve ser informado pelo usuário ao iniciar o jogo.
-    3) A seleção da carta a ser jogada por cada jogador deve ser solicitada ao usuário. Não é necessário
-    esconder as mãos do jogador do usuário (não teria como sem usar elementos de rede para criar um
-    jogo multijogador com múltiplos usuários).
-    4) No início de cada turno de jogador deverá ser impresso a última carta jogada (carta sobre a pilha na
-    mesa) e as cartas da mão do jogador atual.
-    5) Ao final do jogo deve-se anunciar/imprimir o nome do jogador vencedor ou se houve a partida
-    terminou em um empate.
+# Atividade 3 – Jogo de Cartas em Python
 
-------------
-Feito por: Niumar Girardi - Novembro de 2024.
+</div>
+
+**Componente Curricular:** Algoritmos e Programação  
+**Professor:** Felipe Grando / Jefferson Caramori  
+**Data de entrega:** 2024/2  
+**Aluno:** Niumar Girardi  
+**Curso:** Ciência da Computação – UFFS  
+
+---
+
+## 1. Objetivo
+
+O objetivo desta atividade é desenvolver, em linguagem Python, a abstração de um jogo de cartas utilizando conceitos fundamentais de algoritmos e programação, como estruturas de dados, funções, controle de fluxo e interação com o usuário via terminal.
+
+O jogo simula uma partida entre dois jogadores, seguindo regras pré-definidas, incluindo embaralhamento de cartas, distribuição, validação de jogadas e definição automática do vencedor ou empate.
+
+---
+
+## 2. Estrutura de Pastas
+
+O trabalho é composto por apenas um arquivo, conforme especificado na descrição da atividade:
+
+```
+📁 jogo-de-cartas/  
+├── jogoDeCartas.py   
+├── DescricaoDaAtividade.pdf
+└── README.md       
+```
+
+- `jogoDeCartas.py`: contém todo o código-fonte do jogo.
+- `DescricaoDaAtividade.pdf`: Documento fornecido pelo professor para a realização da Atividade.
+- `README.md`: documentação do projeto.
+
+## 3. Código
+
+O código foi desenvolvido totalmente em Python e utiliza a biblioteca padrão `random` para realizar o embaralhamento das cartas.
+
+### Principais partes do código:
+
+#### 🔹 Biblioteca utilizada
+```python
+import random
+```
+Responsável por embaralhar o baralho de forma aleatória.
+
+---
+
+🔹 **Função `tela_inicial()`**
+
+Responsável por exibir o menu principal do jogo, permitindo ao usuário:
+
+- Iniciar uma nova partida
+- Visualizar as regras
+- Encerrar o programa
+
+---
+
+🔹 **Função `mostrar_regras()`**
+
+Exibe as regras básicas do jogo diretamente no terminal, facilitando o entendimento do funcionamento antes de iniciar a partida.
+
+---
+
+🔹 **Função `iniciar_jogo()`**
+
+É a função principal do jogo, responsável por:
+- Solicitar o nome dos jogadores
+- Criar e embaralhar o baralho (40 cartas)
+- Distribuir 5 cartas para cada jogador
+- Definir a carta inicial da mesa
+- Controlar os turnos dos jogadores
+- Validar se a carta jogada possui mesma cor ou número
+- Permitir compra de carta quando não houver jogadas possíveis
+- Encerrar o jogo quando houver vencedor, empate ou quando o baralho acabar
+
+---
+
+🔹 **Estrutura das cartas**
+
+As cartas são representadas por dicionários Python, contendo:
+
+- `numero:` valor da carta (1 a 9)
+- `cor:` cor da carta (azul, vermelha, amarela ou verde)
+
+Exemplo:
+
+```py
+{'cor': 'azul', 'numero': 5}
+```
+
+---
+
+## 4. Compilação / Execução
+
+Como o projeto foi desenvolvido em Python, não é necessário compilação.
+
+**Para executar o jogo:**
+
+1. Certifique-se de ter o Python 3 instalado.
+2. No terminal, navegue até a pasta do projeto.
+3. Execute o comando:
+
+```py
+python jogoDeCartas.py
+```
+ou, dependendo do sistema:
+
+```py
+python3 jogoDeCartas.py
+```
+
+---
+
+## 5. Desenvolvido por:
+
+Trabalho desenvolvido para a disciplina Algoritmos e Programação
+Universidade Federal da Fronteira Sul – UFFS
+
+Desenvolvido por Niumar Girardi – Ciência da Computação
+2024/2
