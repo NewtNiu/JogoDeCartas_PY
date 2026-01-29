@@ -1,6 +1,6 @@
 <div align="center">
 
-# Atividade 3 – Jogo de Cartas em Python
+# AV 3 – Jogo de Cartas em Python
 
 </div>
 
